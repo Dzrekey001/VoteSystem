@@ -1,0 +1,109 @@
+body {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    background-color: #181828;
+    color: rgba(255, 255, 255, 0.41);
+    
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f2f2f2;
+}
+
+.welcome-message {
+    margin-bottom: 20px;
+}
+
+.logout-link {
+    margin-left: auto;
+}
+
+.form-div {
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    background-color: #181828;
+    height:100%;
+    background-image:url("https://1.bp.blogspot.com/-Fo3iRt97ZXY/XvSG4EMwi0I/AAAAAAAAVEo/mrApRTcVVRk1m-fX9K-ffNwRUXlHUocdwCLcBGAsYHQ/s1600/h.jpg");
+}
+
+.candidate-row input {
+    display: none;
+}
+
+.candidate-row label {
+    cursor: pointer;
+    padding: 10px;
+    border: none;
+    width: 100%;
+    height: 200px;
+    transition: background-color 0.3s;
+}
+
+.candidate-row input:checked + label {
+    border: 5px solid rgb(181, 201, 72);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+
+th, td {
+    text-align: center;
+    padding: 5px;
+}
+
+/* Set explicit widths for columns */
+th:first-child, td:first-child {
+    width: 60%; /* Adjust as needed */
+}
+
+th:last-child, td:last-child {
+    width: 40%; /* Adjust as needed */
+}
+
+tbody {
+    align-items: center;
+}
+
+.form-table{
+    width: 500px;
+}
+
+.label-container {
+    text-align: center;
+}
+
+.center-middle {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.candidate-name {
+    display: inline-block;
+}
+
+.center-image {
+    max-width: 100px;
+    max-height: 100px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 5px;
+}
+
+.form-table {
+    width: 100%;
+    margin: auto; /* Add this line to center the table */
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}

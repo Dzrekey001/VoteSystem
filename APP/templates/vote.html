@@ -1,0 +1,49 @@
+{% extends 'layout.html' %}
+
+{% block static %}
+<title>Vote</title>
+<link href="https://fonts.cdnfonts.com/css/sregs-serif-display?styles=137485" rel="stylesheet">                     
+<link rel="stylesheet" href="{{ url_for('static', filename='vote.css') }}">
+{% endblock%}
+{% block content %}
+<div class="form-div">
+    <div class="welcome-message">
+        <p>Welcome {{ voter.first_name }} {{ voter.last_name }}</p>
+    </div>
+    <div >
+        <form action="/recordvote" method="post">
+            <div class="candidate-row container mt-2">
+                {% for position, candidates in candidate_group.items() %}
+                <table class="form-table table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>{{ position }}</th>
+                            <th>Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for candidate in candidates %}
+                        <tr>
+                            <td>
+                                <input type="checkbox" id="{{ candidate.candidateId }}" name="{{ candidate.candidateId }}" onclick="handleCheckbox(this)" class="candidate-checkbox">
+                                <label for="{{ candidate.candidateId }}" class="label-container">
+                                    <div class="center-content">
+                                        <img src="candidate1.jpg" alt="{{ candidate.first_name }} {{ candidate.last_name }}">
+                                    </div>
+                                </label>
+                            </td>
+                            <td class="center-middle"><span class="candidate-name">{{ candidate.candidateId }}</span></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                {% endfor %}
+            </div>
+            <button type="submit" class="btn btn-lg btn-outline-success">Submit</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
+{% block script %}
+    <script src="{{ url_for('static', filename='scripts/vote.js') }}"></script>
+{% endblock %}
